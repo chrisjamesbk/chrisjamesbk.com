@@ -118,9 +118,6 @@ textarea {
 .invisible {
   visibility: hidden;
 }
-/* =============================================================================
-   Print Styles
-   ========================================================================== */
 @media print {
   * {
     background: transparent !important;
