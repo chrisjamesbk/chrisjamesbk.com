@@ -16,14 +16,41 @@ body {
 // HEADINGS
 // --------------------------------------------------
 
-h1, h3, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
-    font-family: @headingFontFamily;
     font-weight: normal;
+    > a {
+        color: @textColor;
+        text-decoration: none;
+    }
 }
 
 h1 {
-    
+    font-family: @headingFontFamily;
+    font-size: 3em;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    > a {
+        color: #fff;
+    }
+}
+
+h2 {
+    font-family: @headingFontFamily;
+    margin: 0.5em 0;
+    font-size: 3em;
+    line-height: 1em;
+    text-align: center;
+}
+
+h3, h4, h5, h6 {
+    margin: 1em 0;
+    font-style: italic;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    @media screen and (min-width: 794px) {
+        font-size: 2em;
+    }
 }
 
 // TEXT
@@ -33,6 +60,14 @@ p {
     line-height: 1.5em;
     @media screen and (min-width: 794px) {
         font-size: 2em;
+    }
+}
+
+a {
+    color: @redAccent;
+    text-decoration: none;
+    &:hover {
+        color: @aquaAccent;
     }
 }
 
@@ -63,3 +98,16 @@ p {
 
 // CODE
 // --------------------------------------------------
+pre,
+code {
+    font-size: 16px !important;
+    line-height: 24px !important;
+}
+
+// OTHER
+// --------------------------------------------------
+blockquote {
+    border-left: 8px solid @aquaAccent;
+    padding-left: 2em;
+    margin: 0;
+}

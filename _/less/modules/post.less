@@ -1,0 +1,45 @@
+// post.less MODULE
+// -----------------------------------------------------------------
+
+.post {
+    margin: 2em 0 4em;
+    padding-bottom: 8em;
+    border-bottom: 1px solid @aquaAccent;
+    &:last-child {
+        border: 0;
+    }
+}
+
+.post-date {
+    text-align: center;
+}
+
+.post-body {
+    ul, ol {
+        padding-left: 1em;
+        list-style: disc;
+    }
+    li {
+        font-size: 1.5em;
+        line-height: 1.5em;
+        @media screen and (min-width: 794px) {
+            font-size: 2em;
+        }
+    }
+}
+
+.post-meta {
+    .not-really-a-list();
+    margin: 1em 0;
+    text-align: center;
+    &.post-tags {
+        > li {
+            .inline-block();
+            margin: 0 8px;
+        }
+    }
+}
+
+.post-notes {
+    border: 0;
+}

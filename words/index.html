@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Words by Chris James</title>
+    <meta name="description" content="Notes and observations on web development, design, ui, ux and the tech industry.">
+    <meta name="author" content="@chrisjamesbk">
+
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="http://chrisjamesbk.com/_/css/style.css">
+    <link rel="stylesheet" href="http://chrisjamesbk.com/_/css/prism.css" />
+
+    <script src="http://chrisjamesbk.com/_/js/libs/modernizr-2.5.3.min.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/tum2tlx.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body class="blog">
+    <header role="banner">
+        <div class="l-header">
+            <h1><a href="http://chrisjamesbk.com">Chris James</a></h1>
+            <span class="subhead subhead-long">is a <strong>Web Developer</strong> living in beautiful <strong>Brooklyn, NY</strong></span>
+            <span class="subhead subhead-short">Web Developer</span>
+            <ul class="nav nav-header">
+                <li><a href="http://chrisjamesbk.com/work">Work</a></li>
+                <li><a href="http://chrisjamesbk.com/words">Words</a></li>
+                <li><a href="http://chrisjamesbk.com/info">Info</a></li>
+                <li><a href="http://chrisjamesbk.com/contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="l-main">
+        <div class="taglist">
+            <!-- insert taglist and search here -->
+        </div>
+        <ul class="posts">
+            {block:Posts}
+            
+                {block:Text}    
+                    <li class="post post-text">
+                        <div class="post-date">
+                            {block:Date}<a href="{Permalink}">{DayOfMonth} {Month}, {Year}</a>{/block:Date}
+                        </div>
+                        {block:Title}
+                            <h2 class="post-title">
+                                <a href="{Permalink}">{Title}</a>
+                            </h2>
+                        {/block:Title}
+                        <div class="post-body">
+                            {Body}
+                        </div>
+                        {block:HasTags}
+                            <ul class="post-meta post-tags">
+                                {block:Tags}
+                                    <li><a href="{TagURL}">#{Tag}</a></li>
+                                {/block:Tags}
+                            </ul>
+                        {/block:HasTags}
+                        <ul class="post-meta post-credits">
+                            {block:ContentSource}
+                                <li>source: {SourceTitle}</li>
+                            {/block:ContentSource}
+                            {block:RebloggedFrom}
+                                {block:RebloggedFromReblog}
+                                    <li>original source: <a href="{ReblogRootURL}">{ReblogRootName}</a></li>
+                                {/block:RebloggedFromReblog}
+                                <li>reblogged from: <a href="{ReblogParentURL}">{ReblogParentName}</a></li>
+                            {/block:RebloggedFrom}
+                        </ul>
+                        {block:NoteCount}
+                            <ul class="post-meta">
+                                <li><a href="{permalink}">notes: {NoteCount}</a></em>
+                            </ul>
+                        {/block:NoteCount}
+                    </li>
+                {/block:Text}
+                
+                {block:Photo}
+                    <li class="post post-photo">
+                        <div class="post-date">
+                            {block:Date}<a href="{Permalink}">{DayOfMonth} {Month}, {Year}</a>{/block:Date}
+                        </div>
+                        <div class="post-body">
+                            {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" class="photo{block:HighRes} is-hidden{/block:HighRes}"/>{LinkCloseTag}
+                            {block:HighRes} 
+                                {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="photo"/>{LinkCloseTag}
+                            {/block:HighRes}
+                        </div>
+                        {block:Caption}
+                            <div class="post-caption"><p>{Caption}</p></div>
+                        {/block:Caption}
+                        {block:HasTags}
+                            <ul class="post-meta post-tags">
+                                {block:Tags}
+                                    <li><a href="{TagURL}">#{Tag}</a></li>
+                                {/block:Tags}
+                            </ul>
+                        {/block:HasTags}
+                        <ul class="post-meta post-credits">
+                            {block:ContentSource}
+                                <li>source: {SourceTitle}</li>
+                            {/block:ContentSource}
+                            {block:RebloggedFrom}
+                                {block:RebloggedFromReblog}
+                                    <li>original source: <a href="{ReblogRootURL}">{ReblogRootName}</a></li>
+                                {/block:RebloggedFromReblog}
+                                <li>reblogged from: <a href="{ReblogParentURL}">{ReblogParentName}</a></li>
+                            {/block:RebloggedFrom}
+                        </ul>
+                        {block:NoteCount}
+                            <ul class="post-meta">
+                                <li><a href="{permalink}">notes: {NoteCount}</a></em>
+                            </ul>
+                        {/block:NoteCount}
+                    </li>
+                {/block:Photo}
+                
+                {block:Photoset}
+                    <li class="post post-photo">
+                        <div class="post-date">
+                            {block:Date}<a href="{Permalink}">{DayOfMonth} {Month}, {Year}</a>{/block:Date}
+                        </div>
+                        <div class="post-body">
+                            {block:Photos}
+                                <img src="{PhotoURL-500}" alt="{PhotoAlt}" class="photo{block:HighRes} is-hidden{/block:HighRes}"/>
+                                {block:HighRes} 
+                                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="photo"/>
+                                {/block:HighRes}
+                            {/block:Photos}
+                        </div>
+                        {block:Caption}
+                            <div class="post-caption"><p>{Caption}</p></div>
+                        {/block:Caption}
+                        {block:HasTags}
+                            <ul class="post-meta post-tags">
+                                {block:Tags}
+                                    <li><a href="{TagURL}">#{Tag}</a></li>
+                                {/block:Tags}
+                            </ul>
+                        {/block:HasTags}
+                        <ul class="post-meta post-credits">
+                            {block:ContentSource}
+                                <li>source: {SourceTitle}</li>
+                            {/block:ContentSource}
+                            {block:RebloggedFrom}
+                                {block:RebloggedFromReblog}
+                                    <li>original source: <a href="{ReblogRootURL}">{ReblogRootName}</a></li>
+                                {/block:RebloggedFromReblog}
+                                <li>reblogged from: <a href="{ReblogParentURL}">{ReblogParentName}</a></li>
+                            {/block:RebloggedFrom}
+                        </ul>
+                        {block:NoteCount}
+                            <ul class="post-meta">
+                                <li><a href="{permalink}">notes: {NoteCount}</a></em>
+                            </ul>
+                        {/block:NoteCount}
+                    </li>
+                {/block:Photoset}
+                
+                {block:Quote}
+                    <li class="post post-quote">
+                        <div class="post-date">
+                            {block:Date}<a href="{Permalink}">{DayOfMonth} {Month}, {Year}</a>{/block:Date}
+                        </div>
+                        <div class="post-body">
+                            <blockquote><p>{Quote}</p></blockquote>
+                        </div>
+                        {block:Source}
+                        <div class="post-caption"><p>{Source}</p></div>
+                        {/block:Source}
+                        {block:HasTags}
+                            <ul class="post-meta post-tags">
+                                {block:Tags}
+                                    <li><a href="{TagURL}">#{Tag}</a></li>
+                                {/block:Tags}
+                            </ul>
+                        {/block:HasTags}
+                        <ul class="post-meta post-credits">
+                            {block:ContentSource}
+                                <li>source: {SourceTitle}</li>
+                            {/block:ContentSource}
+                            {block:RebloggedFrom}
+                                {block:RebloggedFromReblog}
+                                    <li>original source: <a href="{ReblogRootURL}">{ReblogRootName}</a></li>
+                                {/block:RebloggedFromReblog}
+                                <li>reblogged from: <a href="{ReblogParentURL}">{ReblogParentName}</a></li>
+                            {/block:RebloggedFrom}
+                        </ul>
+                        {block:NoteCount}
+                            <ul class="post-meta">
+                                <li><a href="{permalink}">notes: {NoteCount}</a></em>
+                            </ul>
+                        {/block:NoteCount}
+                    </li>
+                {/block:Quote}
+                
+                {block:Link}
+                    <li class="post post-link">
+                        <div class="post-date">
+                            {block:Date}<a href="{Permalink}">{DayOfMonth} {Month}, {Year}</a>{/block:Date}
+                        </div>
+                        <div class="post-body">
+                            <p><a href="{URL}" class="link" {Target}>{Name}</a></p>
+                        </div>
+                        {block:Description}
+                            <div class="post-caption"><p>{Description}</p></div>
+                        {/block:Description}
+                        {block:HasTags}
+                            <ul class="post-meta post-tags">
+                                {block:Tags}
+                                    <li><a href="{TagURL}">#{Tag}</a></li>
+                                {/block:Tags}
+                            </ul>
+                        {/block:HasTags}
+                        <ul class="post-meta post-credits">
+                            {block:ContentSource}
+                                <li>source: {SourceTitle}</li>
+                            {/block:ContentSource}
+                            {block:RebloggedFrom}
+                                {block:RebloggedFromReblog}
+                                    <li>original source: <a href="{ReblogRootURL}">{ReblogRootName}</a></li>
+                                {/block:RebloggedFromReblog}
+                                <li>reblogged from: <a href="{ReblogParentURL}">{ReblogParentName}</a></li>
+                            {/block:RebloggedFrom}
+                        </ul>
+                        {block:NoteCount}
+                            <ul class="post-meta">
+                                <li><a href="{permalink}">notes: {NoteCount}</a></em>
+                            </ul>
+                        {/block:NoteCount}
+                    </li>
+                {/block:Link}
+                
+                {block:Chat}
+                    <li class="post post-chat">
+                        <div class="post-date">
+                            {block:Date}<a href="{Permalink}">{DayOfMonth} {Month}, {Year}</a>{/block:Date}
+                        </div>
+                        {block:Title}
+                            <h2 class="post-title">
+                                <a href="{Permalink}">{Title}</a>
+                            </h2>
+                        {/block:Title}
+                        <div class="post-body">
+                            <ul>
+                                {block:Lines}
+                                    <li class="{Alt} user_{UserNumber}">
+                                        {block:Label}
+                                            <span class="label">{Label}</span>
+                                        {/block:Label}
+                                        {Line}
+                                    </li>
+                                {/block:Lines}
+                            </ul>
+                        </div>
+                        {block:HasTags}
+                            <ul class="post-meta post-tags">
+                                {block:Tags}
+                                    <li><a href="{TagURL}">#{Tag}</a></li>
+                                {/block:Tags}
+                            </ul>
+                        {/block:HasTags}
+                        <ul class="post-meta post-credits">
+                            {block:ContentSource}
+                                <li>source: {SourceTitle}</li>
+                            {/block:ContentSource}
+                            {block:RebloggedFrom}
+                                {block:RebloggedFromReblog}
+                                    <li>original source: <a href="{ReblogRootURL}">{ReblogRootName}</a></li>
+                                {/block:RebloggedFromReblog}
+                                <li>reblogged from: <a href="{ReblogParentURL}">{ReblogParentName}</a></li>
+                            {/block:RebloggedFrom}
+                        </ul>
+                        {block:NoteCount}
+                            <ul class="post-meta">
+                                <li><a href="{permalink}">notes: {NoteCount}</a></em>
+                            </ul>
+                        {/block:NoteCount}
+                    </li>
+                {/block:Chat}
+                
+                {block:Video}
+                    <li class="post post-video">
+                        <div class="post-date">
+                            {block:Date}<a href="{Permalink}">{DayOfMonth} {Month}, {Year}</a>{/block:Date}
+                        </div>
+                        <div class="post-body">
+                            {Video-700}
+                        </div>
+                        {block:Caption}
+                            <div class="post-caption"><p>{Caption}</p></div>
+                        {/block:Caption}
+                        {block:HasTags}
+                            <ul class="post-meta post-tags">
+                                {block:Tags}
+                                    <li><a href="{TagURL}">#{Tag}</a></li>
+                                {/block:Tags}
+                            </ul>
+                        {/block:HasTags}
+                        <ul class="post-meta post-credits">
+                            {block:ContentSource}
+                                <li>source: {SourceTitle}</li>
+                            {/block:ContentSource}
+                            {block:RebloggedFrom}
+                                {block:RebloggedFromReblog}
+                                    <li>original source: <a href="{ReblogRootURL}">{ReblogRootName}</a></li>
+                                {/block:RebloggedFromReblog}
+                                <li>reblogged from: <a href="{ReblogParentURL}">{ReblogParentName}</a></li>
+                            {/block:RebloggedFrom}
+                        </ul>
+                        {block:NoteCount}
+                            <ul class="post-meta">
+                                <li><a href="{permalink}">notes: {NoteCount}</a></em>
+                            </ul>
+                        {/block:NoteCount}
+                    </li>
+                {/block:Video}
+                
+                {block:Audio}
+                    <li class="post post-audio is-hidden">
+                        Audio posts are currently disabled.
+                    </li>
+                {/block:Audio}
+                
+                {block:Answer}
+                    <li class="post post-answer is-hidden">
+                        Answer posts are currently disabled.
+                    </li>
+                {/block:Answer}
+                
+                {block:PostNotes}
+                    <li class="post post-meta post-notes">
+                        {PostNotes}
+                    </li>
+                {/block:PostNotes}
+                
+            {/block:Posts}
+        </ul>
+    </section>
+    <footer>
+        <ul class="nav nav-footer">
+            <li><a href="http://chrisjamesbk/work">Work</a></li>
+            <li><a href="http://chrisjamesbk/words">Words</a></li>
+            <li><a href="http://chrisjamesbk/info">Info</a></li>
+            <li><a href="http://chrisjamesbk/contact">Contact</a></li>
+        </ul>
+        <ul class="nav nav-external">
+            <li><a href="http://twitter.com/chrisjamesbk" target="_blank">@chrisjamesbk</a></li>
+            <li><a href="http://www.linkedin.com/in/chrisjames03" target="_blank">LinkedIn</a></li>
+        </ul>
+    </footer>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://chrisjamesbk.com/_/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+    <script src="http://chrisjamesbk.com/_/js/libs/jquery.prism.js"></script>
+    <script src="http://chrisjamesbk.com/_/js/script.js"></script>
+    <script>
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+
+</body>
+</html>
