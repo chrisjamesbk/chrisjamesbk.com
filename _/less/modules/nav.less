@@ -1,0 +1,59 @@
+// nav.less MODULE
+// -----------------------------------------------------------------
+
+.nav {
+    .floated-list();
+    font-family: @headingFontFamily;
+    font-size: 1.25em;
+    &.nav-header {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-left: 1px solid @blue;
+        > li {
+            border-right: 1px solid @blue;
+            > a {
+                display: block;
+                height: 90px;
+                padding: 0 24px;
+                color: #fff;
+                line-height: 90px;
+                text-transform: uppercase;
+                text-decoration: none;
+                &:hover {
+                    background: @blueDark;
+                }
+                @media screen and (max-width: 600px) {
+                    height: 55px;
+                    line-height: 55px;
+                    padding: 0 12px;
+                }
+            }
+        }
+    }
+    &.nav-footer,
+    &.nav-external {
+        > li {
+            > a {
+                color: @blueDarker;
+                text-decoration: none;
+            }
+        }
+    }
+    &.nav-footer {
+        float: left;
+        > li {
+            > a {
+                margin-right: 16px;
+            }
+        }
+    }
+    &.nav-external {
+        float: right;
+        > li {
+            > a {
+                margin-left: 16px;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+// subhead.less MODULE
+// -----------------------------------------------------------------
+
+.subhead {
+    color: @blueLighter; // use the accent color?
+    font-size: 1.25em;
+    font-style: italic;
+    > strong {
+        color: @redAccent;
+    }
+    &.subhead-short {
+        display: none;
+        color: @redAccent;
+        @media screen and (max-width: 888px) {
+            display: block;
+        }
+        @media screen and (max-width: 600px) {
+            display: none;
+        }
+    }
+    &.subhead-long {
+        @media screen and (max-width: 888px) {
+            display: none;
+        }
+    }
+}

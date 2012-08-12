@@ -1,11 +1,56 @@
 // Base.less
 // -----------------------------------------------------------------
 
+// STRUCTURE
+// --------------------------------------------------
+
+body {
+  margin: 0;
+  font-family: @baseFontFamily;
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  color: @textColor;
+  background-color: @blueLight;
+}
+
 // HEADINGS
 // --------------------------------------------------
 
+h1, h3, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: @headingFontFamily;
+    font-weight: normal;
+}
+
+h1 {
+    
+}
+
 // TEXT
 // --------------------------------------------------
+p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    @media screen and (min-width: 794px) {
+        font-size: 2em;
+    }
+}
+
+.highlighted {
+    .inline-block();
+    padding: 0 4px;
+    background: @redAccent;
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+        background: inherit;
+        color: @redAccent;
+    }
+}
+.highlighted-one { background: @greenAccent; }
+.highlighted-two { background: @aquaAccent; }
+.highlighted-three { background: @purpleAccent; }
+.highlighted-four { background: @pinkAccent; }
 
 // LISTS
 // --------------------------------------------------
