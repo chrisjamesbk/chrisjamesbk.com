@@ -367,6 +367,9 @@ footer:after {
 .nav.nav-external > li > a {
   margin-left: 16px;
 }
+.nav.nav-blog > li {
+  width: 50%;
+}
 .intro-welcome {
   font-size: 2em;
   line-height: 36px;

@@ -340,17 +340,17 @@
                 
             {/block:Posts}
         </ul>
+        {block:Pagination}
+            <ul class="nav nav-blog">
+                {block:NextPage}
+                    <li class="nav-blog-prev"><a class="highlighted" href="{NextPage}">&larr; older</a></li>
+                {/block:NextPage}
+                {block:PreviousPage}
+                    <li class="nav-blog-next"><a class="highlighted" href="{PreviousPage}">newer &rarr;</a></li>
+                {block:PreviousPage}
+            </ul>
+        {block:Pagination}
     </section>
-    {block:Pagination}
-        <ul class="nav nav-blog">
-            {block:NextPage}
-                <li><a class="highlighted nav-blog-prev" href="{NextPage}">older</a></li>
-            {/block:NextPage}
-            {block:PreviousPage}
-                <li><a class="highlighted nav-blog-next" href="{PreviousPage}">newer</a></li>
-            {block:PreviousPage}
-        </ul>
-    {block:Pagination}
     <footer>
         <ul class="nav nav-footer">
             <li><a href="http://chrisjamesbk/work">Work</a></li>
