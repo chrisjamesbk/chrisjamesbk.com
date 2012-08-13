@@ -370,6 +370,9 @@ footer:after {
 .nav.nav-blog > li {
   width: 50%;
 }
+.nav-blog-next {
+  text-align: right;
+}
 .intro-welcome {
   font-size: 2em;
   line-height: 36px;
