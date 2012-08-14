@@ -130,9 +130,13 @@
                         </div>
                         <div class="post-body">
                             {block:Photos}
-                                <img src="{PhotoURL-500}" alt="{PhotoAlt}" class="photo{block:HighRes} is-hidden{/block:HighRes}"/>
-                                {block:HighRes} 
-                                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="photo"/>
+                                <figure class="photo{block:HighRes} is-hidden{/block:HighRes}">
+                                    <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+                                </figure>
+                                {block:HighRes}
+                                    <figure class="photo">
+                                        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="photo"/>
+                                    </figure>
                                 {/block:HighRes}
                             {/block:Photos}
                         </div>
@@ -293,7 +297,9 @@
                             {block:Date}<a href="{Permalink}">{DayOfMonth} {Month}, {Year}</a>{/block:Date}
                         </div>
                         <div class="post-body">
-                            {Video-700}
+                            <figure class="video">
+                                {Video-700}
+                            </figure>
                         </div>
                         {block:Caption}
                             <div class="post-caption"><p>{Caption}</p></div>

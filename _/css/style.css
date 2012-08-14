@@ -229,7 +229,7 @@ blockquote {
   margin: 0;
 }
 .is-hidden {
-  display: none;
+  display: none !important;
 }
 .l-main {
   width: 86%;
@@ -413,6 +413,9 @@ footer:after {
     font-size: 2em;
   }
 }
+.post-body img {
+  border: 8px solid #5ad39b;
+}
 .post-meta {
   margin: 0;
   padding: 0;
@@ -434,6 +437,8 @@ footer:after {
   display: inline-block;
   *zoom: 1;
   *display: inline;
+  margin: 16px 0 0;
+  text-align: center;
 }
 @media print {
   * {
