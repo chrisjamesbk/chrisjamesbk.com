@@ -85,9 +85,13 @@
                             {block:Date}<a href="{Permalink}">{DayOfMonth} {Month}, {Year}</a>{/block:Date}
                         </div>
                         <div class="post-body">
-                            {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" class="photo{block:HighRes} is-hidden{/block:HighRes}"/>{LinkCloseTag}
-                            {block:HighRes} 
-                                {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="photo"/>{LinkCloseTag}
+                            <figure class="photo{block:HighRes} is-hidden{/block:HighRes}">
+                                {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
+                            </figure>
+                            {block:HighRes}
+                                <figure class="photo">
+                                    {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="photo"/>{LinkCloseTag}
+                                </figure>
                             {/block:HighRes}
                         </div>
                         {block:Caption}
@@ -204,7 +208,7 @@
                             {block:Date}<a href="{Permalink}">{DayOfMonth} {Month}, {Year}</a>{/block:Date}
                         </div>
                         <div class="post-body">
-                            <p><a href="{URL}" class="link" {Target}>{Name}</a></p>
+                            <p><a href="{URL}" class="highlighted" {Target}>{Name}</a></p>
                         </div>
                         {block:Description}
                             <div class="post-caption"><p>{Description}</p></div>

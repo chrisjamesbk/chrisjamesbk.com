@@ -430,6 +430,11 @@ footer:after {
 .post-notes {
   border: 0;
 }
+.photo {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
 @media print {
   * {
     background: transparent !important;
