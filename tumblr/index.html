@@ -33,7 +33,7 @@
             </ul>
         </div>
     </header>
-    <section class="l-main language-markup">
+    <section class="l-main">
         <div class="taglist">
             <!-- insert taglist and search here -->
         </div>
@@ -366,8 +366,19 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="http://chrisjamesbk.com/_/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
-    <script type="text/javascript" src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
-    <script src="http://chrisjamesbk.com/_/js/script.js"></script>
+    <script type="text/javascript" src="http://chrisjamesbk.com/_/js/libs/prettify.js"></script>
+    <script>
+        $(document).ready(function() {
+            // add prettyprint class to all <pre><code></code></pre> blocks
+            var prettify = false;
+            $("pre, code").each(function() {
+                $(this).addClass('prettyprint');
+                prettify = true;
+            });
+            // if code blocks were found, bring in the prettifier ...
+            prettyPrint();
+        });
+    </script>
     <script>
         var _gaq=[['_setAccount','UA-15402416-1'],['_trackPageview']];
         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

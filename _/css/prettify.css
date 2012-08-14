@@ -35,6 +35,12 @@
   .atv { color: #060 }
 }
 
+/* Put a border around prettyprinted code snippets. */
+pre.prettyprint { 
+    padding: 2px; 
+    background: #fff;
+}
+
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums { margin-top: 0; margin-bottom: 0 } /* IE indents via margin-left */
 li.L0,
