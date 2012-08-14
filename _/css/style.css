@@ -228,6 +228,9 @@ blockquote {
   padding-left: 2em;
   margin: 0;
 }
+iframe {
+  border: 8px solid #5ad39b;
+}
 .is-hidden {
   display: none !important;
 }
