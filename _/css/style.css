@@ -92,32 +92,6 @@ textarea {
   overflow: auto;
   vertical-align: top;
 }
-.hidden {
-  display: none !important;
-  visibility: hidden;
-}
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
-}
-.invisible {
-  visibility: hidden;
-}
 body {
   margin: 0;
   font-family: "garamond-premier-pro", Georgia, "Times New Roman", serif;
@@ -209,14 +183,26 @@ a:hover {
 .highlighted-one {
   background: #99d35a;
 }
+.highlighted-one:hover {
+  color: #99d35a;
+}
 .highlighted-two {
   background: #5ad39b;
+}
+.highlighted-two:hover {
+  color: #5ad39b;
 }
 .highlighted-three {
   background: #825ad3;
 }
+.highlighted-three:hover {
+  color: #825ad3;
+}
 .highlighted-four {
   background: #d35a88;
+}
+.highlighted-four:hover {
+  color: #d35a88;
 }
 pre,
 code {
@@ -237,11 +223,22 @@ iframe {
 .is-hidden {
   display: none !important;
 }
+.is-visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
 .l-main {
   width: 86%;
   max-width: 960px;
   margin: 0 auto;
   padding: 0 2%;
+  overflow: hidden;
   padding-top: 2em;
   padding-bottom: 2em;
   background: #ecffff;
@@ -387,6 +384,49 @@ footer:after {
   .intro-welcome {
     font-size: 3em;
   }
+}
+.meta {
+  position: relative;
+  left: 0;
+  height: auto;
+  -webkit-transition: left 0.5s ease;
+  -moz-transition: left 0.5s ease;
+  -ms-transition: left 0.5s ease;
+  -o-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+}
+.meta.is-invisible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  left: -120%;
+}
+.meta-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  *zoom: 1;
+}
+.meta-list:before,
+.meta-list:after {
+  display: table;
+  content: "";
+}
+.meta-list:after {
+  clear: both;
+}
+.meta-list > li {
+  float: left;
+}
+.meta-list > li {
+  margin: 4px 8px 0 0;
+  text-transform: lowercase;
 }
 .posts {
   margin: 0;

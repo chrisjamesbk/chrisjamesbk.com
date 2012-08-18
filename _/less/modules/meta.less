@@ -1,0 +1,21 @@
+// meta.less MODULE
+// -----------------------------------------------------------------
+
+.meta {
+    position: relative;
+    left: 0;
+    height: auto;
+    .transition(left 0.5s ease);
+    &.is-invisible {
+        .is-visuallyhidden;
+        left: -120%;
+    }
+}
+
+.meta-list {
+    .floated-list();
+    > li {
+        margin: 4px 8px 0 0;
+        text-transform: lowercase;
+    }
+}
