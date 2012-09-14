@@ -259,6 +259,22 @@ header[role="banner"] {
     height: 55px;
   }
 }
+@media screen and (max-width: 480px) {
+  .l-header {
+    width: 90%;
+    padding: 0 5%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .l-header > h1 {
+    margin-left: 8px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .l-header.is-header-expanded {
+    height: 110px;
+  }
+}
 footer {
   width: 86%;
   max-width: 960px;
@@ -354,6 +370,17 @@ footer:after {
     padding: 0 12px;
   }
 }
+@media screen and (max-width: 479px) {
+  .nav.nav-header {
+    display: none;
+    top: 55px;
+    right: auto;
+    background: #273138;
+  }
+}
+.nav.nav-header.is-nav-active {
+  display: block;
+}
 .nav.nav-footer > li > a,
 .nav.nav-external > li > a {
   text-decoration: none;
@@ -375,6 +402,12 @@ footer:after {
 }
 .nav-blog-next {
   text-align: right;
+}
+.morenav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 55px;
 }
 .intro-welcome {
   font-size: 2em;

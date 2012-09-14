@@ -30,6 +30,15 @@
                 }
             }
         }
+        @media screen and (max-width: 479px) {
+            display: none;
+            top: 55px;
+            right: auto;
+            background: @blueDarker;
+        }
+        &.is-nav-active {
+            display: block;
+        }
     }
     &.nav-footer,
     &.nav-external {
@@ -65,4 +74,11 @@
 
 .nav-blog-next {
     text-align: right;
+}
+
+.morenav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 55px;
 }
