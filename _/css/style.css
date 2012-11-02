@@ -229,6 +229,12 @@ a:hover {
 .highlighted-four:hover {
   color: #d35a88;
 }
+.highlighted-five {
+  background: #273138;
+}
+.highlighted-five:hover {
+  color: #273138;
+}
 pre,
 code {
   font-size: 16px !important;
@@ -248,10 +254,10 @@ section iframe {
 .is-hidden {
   display: none !important;
 }
-.is-visuallyhidden {
+.is-vishidden {
   border: 0;
   clip: rect(0 0 0 0);
-  height: 1px;
+  height: 1px !important;
   margin: -1px;
   overflow: hidden;
   padding: 0;
@@ -408,6 +414,9 @@ footer:after {
 .nav.nav-header > li > a:hover {
   background: #5ad39b;
 }
+.nav.nav-header > li > a.is-active {
+  background: #5ad39b;
+}
 @media screen and (max-width: 600px) {
   .nav.nav-header > li > a {
     height: 55px;
@@ -467,24 +476,24 @@ footer:after {
 }
 .meta {
   position: relative;
-  left: 0;
-  height: auto;
-  -webkit-transition: left 0.5s ease;
-  -moz-transition: left 0.5s ease;
-  -ms-transition: left 0.5s ease;
-  -o-transition: left 0.5s ease;
-  transition: left 0.5s ease;
-}
-.meta.is-invisible {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
+  width: 100%;
+  height: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  left: -120%;
+}
+.meta.is-active {
+  height: 300px;
+}
+.meta-wrap {
+  background: #5ad39b;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1em 2%;
+  width: 86%;
 }
 .meta-list {
   margin: 0;
@@ -507,6 +516,32 @@ footer:after {
 .meta-list > li {
   margin: 4px 8px 0 0;
   text-transform: lowercase;
+}
+.meta-list > li.no-link {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  padding: 0 4px;
+  background: #99d35a;
+  color: #fff;
+  text-decoration: none;
+}
+.meta-list > li a {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  padding: 0 4px;
+  background: #d4695b;
+  color: #fff;
+  text-decoration: none;
+  background: #273138;
+}
+.meta-list > li a:hover {
+  background: inherit;
+  color: #d4695b;
+}
+.meta-list > li a:hover {
+  color: #273138;
 }
 .posts {
   margin: 0;
