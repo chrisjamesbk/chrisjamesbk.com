@@ -9,9 +9,33 @@
         position: absolute;
         top: 0;
         right: 0;
-        border-left: 1px solid @blue;
+        //.box-sizing(border-box);
+        @media screen and (max-width: 510px) {
+            height: 0;
+            overflow: hidden;
+            position: absolute;
+            right: 0;
+            top: 55px;
+            width: 50%;
+            background: @blueDarker;
+            .transition(all 0.5s ease-in-out);
+        }
+        &.is-nav-active {
+            height: 220px;
+            border-top: 1px solid @blue;
+        }
         > li {
             border-right: 1px solid @blue;
+            &:first-child {
+                border-left: 1px solid @blue;
+            }
+            @media screen and (max-width: 510px) {
+                float: none;
+                height: 54px;
+                border-right: 0;
+                border-bottom: 1px solid @blue;
+                text-align: right;
+            }
             > a {
                 display: block;
                 height: 90px;
@@ -29,15 +53,6 @@
                     padding: 0 12px;
                 }
             }
-        }
-        @media screen and (max-width: 479px) {
-            display: none;
-            top: 55px;
-            right: auto;
-            background: @blueDarker;
-        }
-        &.is-nav-active {
-            display: block;
         }
     }
     &.nav-footer,
@@ -77,8 +92,17 @@
 }
 
 .morenav {
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
-    line-height: 55px;
+    padding-right: 10px;
+    font-size: 28px;
+    line-height: 56px;
+    @media screen and (max-width: 510px) {
+        .inline-block();
+    }
+    > a {
+        color: #fff;
+    }
 }

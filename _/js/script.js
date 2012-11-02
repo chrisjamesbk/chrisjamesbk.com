@@ -14,18 +14,7 @@ $(document).ready(function() {
     
     // nav drop-down on mobile
     $('.morenav').click(function(){
-        $('.l-header').toggleClass('is-header-expanded');
         $('.nav-header').toggleClass('is-nav-active');
-    });
-    var currentWidth = $(window).width();
-    /* not sure we need this */
-    $(window).resize(function(){
-        var newWidth = $(window).width();
-        if ((currentWidth < 479) && (newWidth >= 480)) {
-            $('.l-header').removeClass('is-header-expanded');
-            $('.nav-header').removeClass('is-nav-active');
-        }
-        currentWidth = $(window).width();
     });
 
 });
