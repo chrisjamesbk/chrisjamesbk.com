@@ -424,6 +424,10 @@ footer:after {
     padding: 0 12px;
   }
 }
+.nav.nav-footer > li,
+.nav.nav-external > li {
+  color: #d4695b;
+}
 .nav.nav-footer > li > a,
 .nav.nav-external > li > a {
   text-decoration: none;
@@ -431,11 +435,22 @@ footer:after {
 .nav.nav-footer {
   float: left;
 }
+@media screen and (max-width: 620px) {
+  .nav.nav-footer {
+    float: none;
+    margin-bottom: 8px;
+  }
+}
 .nav.nav-footer > li > a {
   margin-right: 16px;
 }
 .nav.nav-external {
   float: right;
+}
+@media screen and (max-width: 620px) {
+  .nav.nav-external {
+    float: none;
+  }
 }
 .nav.nav-external > li > a {
   margin-left: 16px;

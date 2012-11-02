@@ -61,14 +61,18 @@
     &.nav-footer,
     &.nav-external {
         > li {
+            color: @redAccent;
             > a {
-                //color: @blueDarker;
                 text-decoration: none;
             }
         }
     }
     &.nav-footer {
         float: left;
+        @media screen and (max-width: 620px) {
+            float: none;
+            margin-bottom: 8px;
+        }
         > li {
             > a {
                 margin-right: 16px;
@@ -77,6 +81,9 @@
     }
     &.nav-external {
         float: right;
+        @media screen and (max-width: 620px) {
+            float: none;
+        }
         > li {
             > a {
                 margin-left: 16px;
