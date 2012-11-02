@@ -242,7 +242,7 @@ blockquote {
 figure {
   margin: 16px 0 0;
 }
-iframe {
+section iframe {
   border: 8px solid #5ad39b;
 }
 .is-hidden {
