@@ -235,15 +235,11 @@ a:hover {
 .highlighted-five:hover {
   color: #273138;
 }
-ul,
-ol,
 dl {
   font-size: 1.5em;
   line-height: 1.5em;
 }
 @media screen and (min-width: 794px) {
-  ul,
-  ol,
   dl {
     font-size: 2em;
   }
